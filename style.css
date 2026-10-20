@@ -1,0 +1,72 @@
+:root {
+    --bg-dark: #330b0b;
+    --card-bg: #451212;
+    --card-border: #5e1c1c;
+    --primary-gold: #d4af37;
+    --gold-gradient: linear-gradient(135deg, #f3e0aa 0%, #d4af37 50%, #aa820a 100%);
+    --text-white: #ffffff;
+    --text-muted: #dcdcdc;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: var(--bg-dark); color: var(--text-white); padding-bottom: 90px; }
+.hidden { display: none !important; }
+
+/* Header */
+.app-header { background: #260707; color: var(--primary-gold); padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--card-border); }
+.app-header h1 { font-size: 20px; font-weight: bold; }
+.header-user-profile { display: flex; flex-direction: column; align-items: flex-end; font-size: 12px; }
+.badge-id { color: #f3e0aa; font-weight: 600; }
+.username-text { color: white; font-weight: bold; }
+
+/* Banners */
+.vpn-banner { background: #5a1818; color: #ffeb3b; text-align: center; padding: 8px; font-size: 12px; border-bottom: 1px solid #752222; }
+.ticker-bar { background: #1a0505; color: #ffeb3b; padding: 6px 10px; font-size: 12px; }
+
+/* Main & Cards */
+.main-container { padding: 12px; max-width: 600px; margin: auto; }
+.card { background: var(--card-bg); padding: 16px; border-radius: 12px; border: 1px solid var(--card-border); margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+
+/* Form Elements */
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; margin-bottom: 5px; font-size: 13px; color: var(--text-muted); }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid var(--card-border); border-radius: 8px; font-size: 14px; background: #2b0808; color: white; }
+.form-group input:focus { border-color: var(--primary-gold); outline: none; }
+
+/* Buttons */
+.btn { width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; margin-top: 5px; }
+.primary-btn { background: var(--gold-gradient); color: #220505; box-shadow: 0 4px 10px rgba(212,175,55,0.2); }
+.success-btn { background: var(--gold-gradient); color: #220505; }
+.danger-btn { background: #c0392b; color: white; }
+
+.toggle-auth-text, .forgot-pass { color: #f3e0aa; cursor: pointer; text-align: center; margin-top: 10px; font-size: 12px; text-decoration: underline; }
+.alert-box { background: #521313; color: #ffcccc; padding: 10px; margin-top: 10px; border-radius: 6px; font-size: 12px; }
+
+/* Price & Payment */
+.price-display-box { background: var(--gold-gradient); color: #2b0808; padding: 14px; border-radius: 10px; text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 16px; }
+.payment-box-title { font-size: 14px; color: var(--primary-gold); margin-bottom: 8px; font-weight: bold; }
+.bank-info-card { background: #2b0808; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border); margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+
+/* Myanmar Characters Grid (က မှ အ) */
+.char-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+.char-btn { background: #2b0808; color: white; border: 1px solid var(--card-border); padding: 10px 0; border-radius: 6px; font-size: 15px; cursor: pointer; font-weight: bold; text-align: center; transition: 0.2s; }
+.char-btn.selected { background: var(--primary-gold); color: #2b0808; border-color: white; }
+
+/* Digit Input Box */
+.digit-boxes { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+.digit-box { width: 45px; height: 45px; text-align: center; font-size: 18px; font-weight: bold; background: #2b0808; color: var(--primary-gold); border: 1px solid var(--card-border); border-radius: 8px; }
+
+/* Bottom Navigation */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #200404; border-top: 1px solid var(--card-border); display: flex; justify-content: space-around; padding: 6px 0; z-index: 1000; }
+.bottom-nav button { background: none; border: none; font-size: 10px; cursor: pointer; display: flex; flex-direction: column; align-items: center; color: #b59b9b; gap: 2px; flex: 1; }
+.bottom-nav button i { font-size: 15px; }
+.bottom-nav button.active { color: var(--primary-gold); font-weight: bold; }
+.admin-tab-btn { color: #e74c3c !important; }
+
+/* AdMob Banner Simulation */
+.admob-banner { position: fixed; bottom: 58px; left: 0; width: 100%; background: #1a0505; color: #aaa; text-align: center; font-size: 10px; padding: 4px; border-top: 1px dashed var(--card-border); z-index: 999; }
+
+/* Tables */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+.data-table th, .data-table td { padding: 8px; border-bottom: 1px solid var(--card-border); text-align: left; }
+.data-table th { color: var(--primary-gold); }

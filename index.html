@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shwe Lucky 4D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+    <!-- App Header -->
+    <header class="app-header">
+        <h1 id="app-title">Shwe Lucky 4D</h1>
+        <div id="user-info-header" class="hidden header-user-profile">
+            <span id="header-username" class="username-text">အမည်</span>
+            <span id="header-random-id" class="badge-id">ID: 79775188</span>
+        </div>
+    </header>
+
+    <!-- VPN Warning Banner -->
+    <div id="vpn-warning" class="vpn-banner">
+        ⚠️ သတိပေးချက် - App အသုံးပြုရန် VPN ချိတ်ဆက်ရန် လိုအပ်ပါသည်။
+    </div>
+
+    <!-- Ticker Bar -->
+    <div class="ticker-bar">
+        <marquee id="admin-ticker">ကြိုဆိုပါတယ်ခင်ဗျار။ Shwe Lucky 4D မှ ကံထူးရှင်များအတွက် ဝန်ဆောင်မှုပေးနေပါသည်။</marquee>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <!-- LOGIN SECTION (Phone & Password Only) -->
+        <section id="login-section" class="card auth-card">
+            <div class="auth-header">
+                <h2>အကောင့်ဝင်ရန်</h2>
+                <p>ဖုန်းနံပါတ်နှင့် Password ဖြင့် ဝင်ရောက်ပါ</p>
+            </div>
+            <form id="login-form" onsubmit="handleAuth(event)">
+                <div class="form-group">
+                    <label>ဖုန်းနံပါတ်</label>
+                    <input type="text" id="login-phone" placeholder="ဥပမာ - 09912345678" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn primary-btn" id="auth-btn">Login ဝင်မည် / အကောင့်ဖွင့်မည်</button>
+                <p class="toggle-auth-text" onclick="toggleAuthMode()"><span id="toggle-mode-label">အကောင့်မရှိသေးပါက ဤနေရာကိုနှိပ်ပါ (Register)</span></p>
+                <p class="forgot-pass" onclick="showForgotPassword()">Password မေ့နေသည်?</p>
+            </form>
+            <div id="forgot-msg" class="hidden alert-box"></div>
+        </section>
+
+        <!-- USER DASHBOARD SECTION -->
+        <section id="user-dashboard" class="hidden">
+            <div id="tab-content" class="tab-content-area"></div>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="bottom-nav">
+                <button onclick="switchTab('winners')"><i class="fas fa-trophy"></i><span>ဆုပေါက်ထားသူများ</span></button>
+                <button onclick="switchTab('results')"><i class="fas fa-list-ol"></i><span>ထီပေါက်စဉ်</span></button>
+                <button onclick="switchTab('bet')" class="active"><i class="fas fa-ticket-alt"></i><span>ယခုထိုးမည်</span></button>
+                <button onclick="switchTab('history')"><i class="fas fa-history"></i><span>မှတ်တမ်း</span></button>
+                <button onclick="switchTab('about')"><i class="fas fa-info-circle"></i><span>Shwe4Dအကြောင်း</span></button>
+                <button id="admin-nav-btn" class="hidden admin-tab-btn" onclick="switchTab('admin')"><i class="fas fa-user-shield"></i><span>Admin</span></button>
+            </nav>
+        </section>
+
+    </main>
+
+    <!-- AdMob Banner Container (Simulated/Ready for Native Wrapper) -->
+    <div id="admob-banner-container" class="admob-banner">
+        <span>Google AdMob Banner Ad Area</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
